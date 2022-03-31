@@ -1,0 +1,3 @@
+#Extend the previous query to show these values for all stations in the years 2010 to 2019.
+
+SELECT SiteID, ROUND(AVG(`PM2.5`),2) AS `AVERAGE PM2.5` ,ROUND(AVG(`VPM_2.5`),2) AS `AVERAGE VPM2.5` FROM READINGS WHERE YEAR(DATE_TIME) BETWEEN 2010 AND 2019 AND DATE_FORMAT(DATE_TIME,'08:00:00') GROUP BY SiteID;

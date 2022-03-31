@@ -1,0 +1,3 @@
+#Return the mean values of PM2.5 (particulate matter <2.5 micron diameter) & VPM2.5 (volatile particulate matter <2.5 micron diameter) by each station for the year 2019 for readings taken on or near 08:00 hours (peak traffic intensity).
+
+SELECT SiteID,ROUND(AVG(`PM2.5`),2) AS `AVERAGE PM2.5` ,ROUND(AVG(`VPM_2.5`),2) AS `AVERAGE VPM2.5` FROM READINGS WHERE YEAR(DATE_TIME) = 2019 AND DATE_FORMAT(DATE_TIME,'08:00:00') GROUP BY SiteID;
